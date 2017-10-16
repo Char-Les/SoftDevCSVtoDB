@@ -22,11 +22,12 @@ csv2 = csv.DictReader(open("courses.csv"))
 for row in csv1:
     print row
     c.execute("INSERT INTO peeps VALUES ('" + row['name'] + "', " + row['age'] + ", " + row['id'] + ")")
+print "completed adding peeps.csv"
 for row in csv2:
     print row
-    ##populate table
     c.execute("INSERT INTO courses VALUES ('" + row['code'] + "', " + row['mark'] + ", " + row['id'] + ")")
+print "completed adding courses.csv"
 
-##save and close database
+# save and close database
 db.commit()
 db.close()
